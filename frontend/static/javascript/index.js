@@ -1,3 +1,6 @@
+import Dashboard from "./views/Dashboard.js";
+
+
 const navigateTo = url => {
     history.pushState(null,null,url);
     router();
@@ -7,7 +10,7 @@ const navigateTo = url => {
 const router = async() => {
     const routes = [
         { path: "/welcome", view: () => console.log("Viewing Welcome Screen")},
-        { path: "/dashboard", view: () => console.log("Viewing Dashboard")},
+        { path: "/dashboard", view: Dashboard },
         { path: "/meal-plans", view: () => console.log("Viewing Meal Plans")},
         { path: "/profile", view: () => console.log("Viewing Profile")},
         { path: "/settings", view: () => console.log("Viewing Settings")},
@@ -30,6 +33,10 @@ const router = async() => {
         };
     }
 
+    const view = new match.route.view();
+
+    document.querySelector("#app").innerHTML = await view.getHtml();
+    
     console.log(match.route.view);
 };
 

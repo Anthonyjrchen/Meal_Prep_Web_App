@@ -1,4 +1,5 @@
 import Dashboard from "./views/Dashboard.js";
+import Welcome from "./views/Welcome.js";
 
 
 const navigateTo = url => {
@@ -9,7 +10,7 @@ const navigateTo = url => {
 
 const router = async() => {
     const routes = [
-        { path: "/welcome", view: () => console.log("Viewing Welcome Screen")},
+        { path: "/welcome", view: Welcome},
         { path: "/dashboard", view: Dashboard },
         { path: "/meal-plans", view: () => console.log("Viewing Meal Plans")},
         { path: "/profile", view: () => console.log("Viewing Profile")},

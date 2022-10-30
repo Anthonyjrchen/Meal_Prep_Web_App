@@ -12,7 +12,7 @@ export default class extends AbstractView {
             <meta charset="UTF-8">
             <meta name="Dashboard" content="width=device-width, initial-scale=1.0">
             <title>Dashboard</title>
-            <link rel="stylesheet" href="/static/css/Dashboard.css">
+            <link rel="stylesheet" href="/static/css/Settings.css">
             </head> 
             <h1>Welcome back, Dom</h1>
             <p>

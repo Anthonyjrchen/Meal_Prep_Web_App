@@ -13,12 +13,21 @@ export default class extends AbstractView {
             <meta name="Dashboard" content="width=device-width, initial-scale=1.0">
             <title>Dashboard</title>
             <link rel="stylesheet" href="/static/css/Dashboard.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+            <style>
+                body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+            </style>
             </head> 
-            <h1>Welcome back, Dom</h1>
-            <p>
-                Fugiat voluptate et nisi Lorem cillum anim sit do eiusmod occaecat irure do. Reprehenderit anim fugiat sint exercitation consequat. Sit anim laborum sit amet Lorem adipisicing ullamco duis. Anim in do magna ea pariatur et.
-            </p>
-            <p>
+
+            <body>
+
+            <!-- TOP MENU -->
+            <div class="top">
+                <div class="top-center top-padding-16">My Food</div>
+            </div>
+
+            </body>
+
                 <a href="/posts" data-link>View recent posts</a>.
             </p>
         `;

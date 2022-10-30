@@ -1,5 +1,9 @@
 import Dashboard from "./views/Dashboard.js";
 import Welcome from "./views/Welcome.js";
+import Meal_Plans from "./views/Meal_Plans.js";
+import Profile from "./views/Profile.js";
+import Settings from "./views/Settings.js";
+import Not_Found from "./views/Not_Found.js";
 
 
 const navigateTo = url => {
@@ -7,15 +11,14 @@ const navigateTo = url => {
     router();
 }
 
-
 const router = async() => {
     const routes = [
         { path: "/welcome", view: Welcome},
         { path: "/dashboard", view: Dashboard },
-        { path: "/meal-plans", view: () => console.log("Viewing Meal Plans")},
-        { path: "/profile", view: () => console.log("Viewing Profile")},
-        { path: "/settings", view: () => console.log("Viewing Settings")},
-        { path: "/404notfound", view: () => console.log("Not Found")},
+        { path: "/meal-plans", view: Meal_Plans},
+        { path: "/profile", view: Profile},
+        { path: "/settings", view: Settings},
+        { path: "/404notfound", view: Not_Found},
     ];
 
     const potentialMatches= routes.map(route => {

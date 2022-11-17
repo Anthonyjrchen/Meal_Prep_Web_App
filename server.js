@@ -21,12 +21,17 @@ db.query('INSERT INTO user_info SET ?', post);
 
 app.set("view engine", "ejs");
 
-
+// HTML FILES
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 app.get("/dashboard", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "dashboard.html"));
+});
+
+// CSS FILES
+app.get("/index-styles", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "css", "index-styles.css"));
 });
 
 app.listen(process.env.PORT || 3000, () => console.log("Server running..."));

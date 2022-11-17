@@ -14,9 +14,6 @@ db.connect(() => {
     console.log('Connected SQL!');
 });
 
-let post = {username: 'testUser2', password: 'testPassword2'};
-db.query('INSERT INTO user_info SET ?', post);
-
 // app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
 
 app.set("view engine", "ejs");
@@ -27,6 +24,14 @@ app.get("/", (req, res) => {
 });
 app.get("/dashboard", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "dashboard.html"));
+});
+app.get("/contact", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "contact.html"));
+});
+
+// PHP FILES
+app.get("/contact.php", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "contact.php"));
 });
 
 // CSS FILES

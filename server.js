@@ -1,12 +1,14 @@
-const express = require("express");
-const path = require("path");
+const http = require('http');
 
-const app = express();
+const hostname = '127.14.122.1';
+const port = 3000;
 
-app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
-
-app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("Server running..."));
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});

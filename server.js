@@ -14,19 +14,22 @@ db.connect(() => {
     console.log('Connected SQL!');
 });
 
-let post = {username: 'testUser2', password: 'testPassword2'};
-db.query('INSERT INTO user_info SET ?', post);
-
 // app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
 
 app.set("view engine", "ejs");
 
-
+//START PAGES
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 app.get("/dashboard", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "dashboard.html"));
 });
-
+app.get("/contact", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "contact.html"));
+});
+app.get("/contact.php", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "contact.php"));
+});
+//END PAGES
 app.listen(process.env.PORT || 3000, () => console.log("Server running..."));

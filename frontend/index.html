@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temp Title : MPWA</title>
     <link rel="stylesheet" href="/index-styles">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 </head>
 <body>
+    <div class="main-title">MPWA</div>
+
+    <div class="sidebar-button" onclick="open()">☰</div>
+    
+    <!-- Sidebar (hidden by default) -->
+    <nav class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" onclick="close()"class="close-menu">Close Menu</a>
+    </nav>
+    
+
+    <script>
+    // Script to open and close sidebar
+    function open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+     
+    function close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
     <nav>
-        <a href="/dashboard" class="nav__link"> <button>Dashboard</button></a> 
-        <a href="/meal-plans" class="nav__link"><button>Meal Plans</button></a> 
-        <a href="/profile" class="nav__link"><button>Profile</button></a>
-        <a href="/settings" class="nav__link"><button>Settings</button></a> 
+        <!-- <div id="nav__buttons">
+        <a href="/dashboard" class="nav__link">Dashboard</a>
+        <a href="/meal-plans" class="nav__link">Meal Plans</a> 
+        <a href="/profile" class="nav__link">Profile</a>
+        <a href="/settings" class="nav__link">Settings</a> 
+        </div> -->
     </nav>
     <!-- <script type="module" src="js/index.js"></script> -->
 </body>

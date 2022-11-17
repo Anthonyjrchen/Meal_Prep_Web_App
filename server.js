@@ -38,5 +38,8 @@ app.get("/contact.php", (req, res) => {
 app.get("/index-styles", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "css", "index-styles.css"));
 });
+app.get("/dashboard-styles", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "css", "dashboard-styles.css"));
+});
 
 app.listen(process.env.PORT || 3000, () => console.log("Server running..."));

@@ -19,10 +19,14 @@ db.query('INSERT INTO user_info SET ?', post);
 
 // app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
 
-app.use("/frontend", express.static(path.resolve(__dirname, "frontend")));
+app.set("view engine", "ejs");
 
-app.get("/*", (req, res) => {
+
+app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+});
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dashboard.html"));
 });
 
 app.listen(process.env.PORT || 3000, () => console.log("Server running..."));

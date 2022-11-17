@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Contact Form - PHP/MySQL Demo Code</title>
-</head>
+<html>
 <body>
 <fieldset>
 <legend>Contact Form</legend>
-<form name="frmContact" method="post" action="contact.php">
+<script>
+    
+    function doForm() {
+    var mysql = require('mysql');
+    var db = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'aggybear',
+    database : 'mpwa_db'
+    });
+    db.connect(() => {
+        console.log('Connected SQL to submit Username');
+    });
+    let post = {username:document.getElementById("txtName"),password:document.getElementById("txtPassword")};
+    db.query('INSERT INTO user_info SET ?',post);
+    db.end();
+    return true;
+    }
+</script>
+<form onsubmit="return doForm()">
 <p>
 <label for="Name">Name </label>
-<input type="varchar(255)" name="txtName" id="txtName">
+<input type="text" name="txtName">
 </p>
 <p>
 <label for="Password">Password</label>
-<input type="varchar(255)" name="txtPassword" id="txtPassword">
+<input type="text" name="txtPassword">
 </p>
 <p>
-<input type="submit" name="Submit" id="Submit" value="Submit">
+<input type="button" onclick ="doForm()">
 </p>
 </form>
 </fieldset>
